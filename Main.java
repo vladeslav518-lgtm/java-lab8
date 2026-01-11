@@ -285,3 +285,78 @@ public class Main {
         }
     }
 }
+/* =========================================
+    ЗАДАНИЕ 3 Timus 1991
+   ========================================= */
+static void task2_timus1991() {
+    Scanner sc = new Scanner(System.in);
+
+    System.out.println("Введите строку:");
+    String s = sc.nextLine();
+    int count = 0;
+
+    for (int i = 0; i < s.length(); i++) {
+        char c = s.charAt(i);
+
+        if (c == ' ' || c == '.' || c == ',' || c == '!' || c == '?') {
+            count += 1;
+        } else if ("abc".indexOf(c) >= 0) {
+            count += 1;
+        } else if ("def".indexOf(c) >= 0) {
+            count += 2;
+        } else if ("ghi".indexOf(c) >= 0) {
+            count += 3;
+        } else if ("jkl".indexOf(c) >= 0) {
+            count += 1;
+        } else if ("mno".indexOf(c) >= 0) {
+            count += 2;
+        } else if ("pqrs".indexOf(c) >= 0) {
+            count += 1;
+        } else if ("tuv".indexOf(c) >= 0) {
+            count += 2;
+        } else if ("wxyz".indexOf(c) >= 0) {
+            count += 3;
+        }
+    }
+
+    System.out.println("Количество нажатий: " + count);
+}
+
+/* =========================================
+   ЗАДАНИЕ 3 Timus 1567
+   ========================================= */
+static void  task3_timus1567() {
+    Scanner sc = new Scanner(System.in);
+
+    System.out.print("Введите количество отрядов и стрел: ");
+    int n = sc.nextInt();
+    int k = sc.nextInt();
+
+    int dead = 0;
+    int survived = 0;
+
+    for (int i = 0; i < n; i++) {
+        int arrows = sc.nextInt();
+
+        if (arrows > k) {
+            dead += arrows - k;
+        } else {
+            survived += k - arrows;
+        }
+    }
+
+    System.out.println(dead + " " + survived);
+}
+public static void main(String[] args) {
+
+    // Задание 1
+    // task1();
+
+    // Задание 2
+    // task2();
+    task2_timus1991();
+
+    // Задание 3
+    // task3();
+    task3_timus1567();
+}
